@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Layout from "../../organisms/Layout/Layout";
 import { Colors } from "../../../types/baseTypes";
+import LoginForm from "../../organisms/LoginForm/LoginForm";
 
 const PageContainer = styled.div`
   display: flex;
@@ -21,7 +22,7 @@ const LoginPage: React.FC = () => {
     <Layout>
       <PageContainer>
         <Content>
-          <div>Login form</div>
+          <LoginForm />
         </Content>
       </PageContainer>
     </Layout>
