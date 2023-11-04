@@ -2,15 +2,21 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const jsonwebtoken = require("jsonwebtoken");
 const UserModel = require("./../models/userModels");
+const authenticateUser = require("../middleware/authMiddleware");
 const cookieParser = require("cookie-parser");
 
 const messages = require("./../messages");
 const {
   existingUserMessage,
   hashErrorMessage,
-  authenticationSuccessMessage,
+  mailChAccessDeniedMessage,
   invalidCredentialsMessage,
-  mailChAccessDeniedMessage
+  authenticationSuccessMessage,
+  logoutSuccessMessage,
+  deleteUserNotFoundMessage,
+  deleteOwnAccountMessage,
+  deleteSuccessMessage,
+  deleteUserErrorMessage,
 } = messages.userController;
 
 const router = express.Router();
@@ -74,6 +80,32 @@ router.post("/login", (req, res) => {
 
     res.json({ message: authenticationSuccessMessage, token, status: 200 });
   });
+});
+
+router.post("/logout", authenticateUser, (req, res) => {
+  const newToken = "";
+
+  res.json({ message: logoutSuccessMessage, token: newToken, status: 200 });
+});
+
+router.delete("/delete", authenticateUser, (req, res) => {
+  const { email } = req.body;
+  const user = userModel.getUserByEmail(email);
+
+  if (!user) {
+    return res
+      .status(404)
+      .json({ message: deleteUserNotFoundMessage, status: 404 });
+  }
+
+  const deleted = userModel.deleteUserByEmail(email);
+  if (deleted) {
+    res.json({ message: deleteSuccessMessage, status: 200 });
+  } else {
+    return res
+      .status(500)
+      .json({ message: deleteUserErrorMessage, status: 500 });
+  }
 });
 
 

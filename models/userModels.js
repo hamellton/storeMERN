@@ -37,6 +37,16 @@ class UserModel {
 
     return newUser;
   }
+
+  deleteUserByEmail(email) {
+    const userIndex = this.users.findIndex((user) => user.email === email);
+    if (userIndex !== -1) {
+      this.users.splice(userIndex, 1);
+      this.saveUsersToJson();
+      return true;
+    }
+    return false;
+  }
 }
 
 module.exports = UserModel;
