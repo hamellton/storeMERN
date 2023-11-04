@@ -8,5 +8,70 @@
     "id": "44f77257-80b7-4b10-92b8-1a33de0244e0",
     "email": "test2@gmail.com",
     "password": "$2b$10$SVNTm4LOzaYhtO0u8oDrxu3bULp0p3FCNuGKvG9WItBr5isYEGExa"
+  },
+  {
+    "id": "ca2308f8-a94a-4b15-abf9-76586a6f308d",
+    "email": "test3@gmail.com",
+    "password": "$2b$10$NAlLkTVmLe.r2A6kJP30sey4CeAXKs/URAn/AXYs2ECHwo3OpKgS6"
+  },
+  {
+    "id": "845b8836-a48b-4e43-b1b3-ebef5fc8d51a",
+    "email": "test5@gmail.com",
+    "password": "$2b$10$759Dy14bM1F/Vq14fcBDQ.jKIG/QNaK3ZuN18buK7MsB3MkmW7zYW"
+  },
+  {
+    "id": "b14c42f7-beb2-4ce6-a5a1-9ba5176d6b19",
+    "email": "testt@gmail.com",
+    "password": "$2b$10$Jncg3AUVEboS04aj6/MsjOxxEX8HeZVy0VNoZGsndQFoyihvwnUqi"
+  },
+  {
+    "id": "ac3305b6-109c-4b56-99dc-c270c1d872e4",
+    "email": "test7@gmail.com",
+    "password": "$2b$10$1tDBQNhWf99dq3UwTJMuF.MkGmw8InHO42iqjvXAC55QVBfIlzKLG"
+  },
+  {
+    "id": "0f9d40ad-be96-45d4-a76a-d150e1f3484f",
+    "email": "tests@gmail.com",
+    "password": "$2b$10$0VEqypLaUnNNDgbUibYPbu1kowhq/233Qq.ZJAnXKogUYQPaPtzkC"
+  },
+  {
+    "id": "d13cda14-4c2e-4ba4-be29-c2e1f0da70fa",
+    "email": "testr@gmail.com",
+    "password": "$2b$10$52BeIqh9Lctk3DiVi/Wx7eBl1CBIU4q47nTxkxGPZqu2cpqDSO1bW"
+  },
+  {
+    "id": "fd362a02-f02a-4df2-b743-fd304138fdd7",
+    "email": "test10@gmail.com",
+    "password": "$2b$10$skkV841IIaWGxU2Ki60xV.Wh38skrXfb1JMKW4fMy5ZcSMeZA/Wkq"
+  },
+  {
+    "id": "67a596ba-271e-487c-bc76-becc63d00f6e",
+    "email": "test12@gmail.com",
+    "password": "$2b$10$k5Zdnv/YEC41cxTg8dJhC.Zp3v58xKKxgCVhejw/oj.VK4vVUslyC"
+  },
+  {
+    "id": "90f3901f-aca8-4de5-b07e-689db0d65c8a",
+    "email": "test21@gmail.com",
+    "password": "$2b$10$6IssjTsbuHakobc2O8n3u.grfZYKDEeYaaSEeEgWuSpuDTe4oGWxi"
+  },
+  {
+    "id": "eb9f67ad-c22e-487e-aa9c-3b3318e60d1c",
+    "email": "test22@gmail.com",
+    "password": "$2b$10$qCGfoJZvDrTv8QgN.kpDBOWSbPxpvrK/gdb1eUMRv.ZMH27fKxouK"
+  },
+  {
+    "id": "5ff72ed3-40b6-4985-8624-fdad696e6fbf",
+    "email": "test52@gmail.com",
+    "password": "$2b$10$8oRkJ0wkNwJ6Fh8WsZJ3dOkXZCc.FHWgVq7lZ10qpCIhDyP3Yn9f."
+  },
+  {
+    "id": "853291ca-c367-48e0-afa6-23683a708ed5",
+    "email": "test53@gmail.com",
+    "password": "$2b$10$rbp962Y8uJX0ukBQ4URaT.sqqKPdHkTxtgr13yUQp896QAo9AHOGO"
+  },
+  {
+    "id": "1735eeeb-6a94-4421-adf7-bc67da9860cb",
+    "email": "test54@gmail.com",
+    "password": "$2b$10$hSKepyfdEU4Mf2gYSI3BAeer9nuX/v9a0NHgxxf.t2xU0bSr6C6l6"
   }
 ]

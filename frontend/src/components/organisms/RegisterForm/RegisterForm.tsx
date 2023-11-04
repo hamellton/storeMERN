@@ -5,9 +5,10 @@ import styled from "styled-components";
 import { Colors } from "../../../types/baseTypes";
 import useDevice, { DeviceTypes } from "../../../hooks/useDevice";
 import config from "../../../utils/config";
-import { ILoginResponse, ILoginFormData } from "./LoginForm.types";
+import { RegisterFormData } from "./RegisterForm.types";
 import { IApiResponseError } from "../../../types/types";
 import { sendRequest } from "../../../utils/api";
+import { ILoginResponse } from "../LoginForm/LoginForm.types";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -68,41 +69,52 @@ const ErrorContainer = styled.div`
   margin-top: 10px;
 `;
 
-const LoginForm: React.FC = () => {
+const RegisterForm: React.FC = () => {
   const { device } = useDevice() ?? {};
-  const [loginError, setLoginError] = useState<string | null>(null);
+  const [registrationError, setRegistrationError] = useState<string | null>(
+    null
+  );
 
-  const handleSubmit = async (values: ILoginFormData) => {
+  const handleSubmit = async (values: RegisterFormData) => {
     try {
       const data = {
         email: values.email,
         password: values.password,
       };
-  
-      const response = await sendRequest<ILoginResponse | IApiResponseError>(
-        `${config.serverUrl}/user/login`,
-        "POST",
-        data
-      );
-  
-      if (response.status === 200) {
-        if ('token' in response.data) {
-          const token = (response.data as ILoginResponse).token;
+
+      const registerResponse = await sendRequest<
+        ILoginResponse | IApiResponseError
+      >(`${config.serverUrl}/user/register`, "POST", data);
+
+      if (registerResponse.status === 201) {
+        const loginData = {
+          email: values.email,
+          password: values.password,
+        };
+
+        const loginResponse = await sendRequest<
+          ILoginResponse | IApiResponseError
+        >(`${config.serverUrl}/user/login`, "POST", loginData);
+
+        if (loginResponse.status === 200) {
+          const token = (loginResponse.data as ILoginResponse).token;
           localStorage.setItem("jwtToken", token);
           window.location.href = "/login";
         } else {
-          const error = response.data as IApiResponseError;
-          setLoginError(error.message);
+          const errorMessage = (loginResponse.data as IApiResponseError)
+            .message;
+          setRegistrationError(errorMessage);
         }
       } else {
-        const error = response.data as IApiResponseError;
-        setLoginError(error.message);
+        console.error("Registration failed");
+        const errorMessage = (registerResponse.data as IApiResponseError)
+          .message;
+        setRegistrationError(errorMessage);
       }
     } catch (error) {
-      const apiError = error as IApiResponseError;
-      setLoginError(apiError.message);
+      setRegistrationError((error as IApiResponseError).message);
     }
-  };  
+  };
 
   const isMobile = device === DeviceTypes.MOBILE;
 
@@ -126,10 +138,12 @@ const LoginForm: React.FC = () => {
             <ErrorText name="password" component="div" />
           </InputContainer>
 
-          {loginError && <ErrorContainer>{loginError}</ErrorContainer>}
+          {registrationError && (
+            <ErrorContainer>{registrationError}</ErrorContainer>
+          )}
 
           <SubmitButton type="submit" isMobile={isMobile}>
-            Login
+            Register
           </SubmitButton>
         </Form>
       </Formik>
@@ -137,4 +151,4 @@ const LoginForm: React.FC = () => {
   );
 };
 
-export default LoginForm;
+export default RegisterForm;

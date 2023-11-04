@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { Colors } from "../../../types/baseTypes";
 import useDevice, { DeviceTypes } from "../../../hooks/useDevice";
+import useAuth from "../../../hooks/useAuth";
 
 const HeaderContainer = styled.header<{ device?: DeviceTypes }>`
   background-color: ${Colors.primaryBackground};
@@ -67,15 +68,36 @@ const Login = styled.div<{ device?: DeviceTypes }>`
     `}
 `;
 
+const Logout = styled.div<{ device?: DeviceTypes }>`
+  font-size: 18px;
+  margin-left: 20px;
+  ${(props) =>
+    props.device === DeviceTypes.MOBILE &&
+    css`
+      font-size: 16px;
+      text-align: right;
+      margin-left: 0;
+    `}
+`;
+
 const Header: React.FC = () => {
   const { device } = useDevice() ?? {};
+  const { logout, isAuthenticated } = useAuth();
 
   return (
     <HeaderContainer device={device}>
       <Logo device={device}>Logo</Logo>
       <MenuLoginContainer device={device}>
-        <Menu device={device}>Products</Menu>
-        <Login device={device}>Login</Login>
+        {isAuthenticated ? (
+          <Menu device={device}>Products</Menu>
+        ) : (
+          <Login device={device}>Login</Login>
+        )}
+        {isAuthenticated && (
+          <Logout device={device} onClick={logout}>
+            Logout
+          </Logout>
+        )}
       </MenuLoginContainer>
     </HeaderContainer>
   );

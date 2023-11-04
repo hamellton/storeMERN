@@ -12,11 +12,11 @@ const Content = styled.div`
   padding: 0;
 `;
 
-interface LayoutProps {
+interface ILayoutProps {
   children: ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<ILayoutProps> = ({ children }) => {
   return (
     <LayoutContainer>
       <Header />
