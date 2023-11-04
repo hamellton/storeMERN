@@ -68,7 +68,8 @@ router.post("/login", (req, res) => {
 
     const token = jsonwebtoken.sign(
       { email: user.email },
-      process.env.JWT_SECRET
+      process.env.JWT_SECRET,
+      { expiresIn: 3600 }
     );
 
     res.cookie("token", token, {
@@ -82,6 +83,8 @@ router.post("/login", (req, res) => {
 });
 
 router.post("/logout", authenticateUser, (req, res) => {
+  res.clearCookie("token");
+
   const newToken = "";
 
   res.json({ message: logoutSuccessMessage, token: newToken, status: 200 });

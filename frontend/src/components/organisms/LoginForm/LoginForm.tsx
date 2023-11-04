@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Colors } from "../../../types/baseTypes";
 import useDevice, { DeviceTypes } from "../../../hooks/useDevice";
 import config from "../../../utils/config";
-import axios from "axios";
+import { FormData } from "./LoginForm.types";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -67,26 +67,32 @@ const LoginForm: React.FC = () => {
     localStorage.getItem("jwtToken")
   );
 
-  const handleSubmit = async (values: any) => {
+  const handleSubmit = async (values: FormData) => {
     try {
-      const response = await axios.post(
-        `${config.serverUrl}/user/register`,
-        values
-      );
-
-      if (response.status === 201) {
-        const loginResponse = await axios.post(
-          `${config.serverUrl}/user/login`,
-          {
+      const registerResponse = await fetch(`${config.serverUrl}/user/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+  
+      if (registerResponse.status === 201) {
+        const loginResponse = await fetch(`${config.serverUrl}/user/login`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
             email: values.email,
             password: values.password,
-          }
-        );
-
+          }),
+        });
+  
         if (loginResponse.status === 200) {
-          const data = loginResponse.data;
+          const data = await loginResponse.json();
           const token = data.token;
-
+  
           setToken(token);
           localStorage.setItem("jwtToken", token);
         } else {
@@ -99,6 +105,7 @@ const LoginForm: React.FC = () => {
       console.error("Error occurred:", error);
     }
   };
+  
 
   const isMobile = device === DeviceTypes.MOBILE;
 

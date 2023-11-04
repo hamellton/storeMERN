@@ -1,6 +1,6 @@
 [
   {
-    "id": "29f22931-6630-46c9-8e56-0679a7ee0763",
+    "id": "0ba1084e-9aee-4eaf-9744-66838d199a4a",
     "sku": "4G180",
     "description": "Tenda 4G LTE 150Mbps Mobile WiFi Router | 4G180",
     "cpt": 34,
@@ -13,7 +13,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/4G180.jpg"
   },
   {
-    "id": "fb667bab-822a-4650-8d19-70c55447fe00",
+    "id": "93812727-6862-45ed-abe3-5191fd7e5442",
     "sku": "4G680",
     "description": "Tenda 4G LTE 300Mbps WiFi Router | 4G680",
     "cpt": 0,
@@ -26,7 +26,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/4G680.jpg"
   },
   {
-    "id": "0808a8dc-1dfb-421c-ba6c-f2966c218ff3",
+    "id": "92fce1f2-f1a1-43b2-a256-b59540345f24",
     "sku": "ACB-AC",
     "description": "Ubiquiti AirCube AC WiFi Router | ACB-AC",
     "cpt": 20,
@@ -39,7 +39,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/ACB-AC.jpg"
   },
   {
-    "id": "18768d2d-781b-4fb1-be1e-e61a60fbb394",
+    "id": "9ac75142-a32f-47f2-8d42-518836c5b9fa",
     "sku": "ACB-ISP",
     "description": "Ubiquiti AirCube WiFi PoE Access Point with UNMS | ACB-ISP",
     "cpt": 159,
@@ -52,7 +52,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/ACB-ISP.jpg"
   },
   {
-    "id": "9d129ab5-222b-44e3-8e05-d240c83527bd",
+    "id": "06215ad8-0c1e-4ffe-99e2-74d82a970d28",
     "sku": "AF-11FX",
     "description": "Ubiquiti AirFiberX 11GHz PtP Radio | AF-11FX",
     "cpt": 10,
@@ -65,7 +65,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AF-11FX.jpg"
   },
   {
-    "id": "10d228af-6f8e-4ad8-b308-2ddcb1c80a6e",
+    "id": "8be10a43-3802-4bac-989c-260c894072bc",
     "sku": "AF-11FXDUPL",
     "description": "Ubiquiti AirFiberX 11Ghz Low Band Duplexer | AF-11FX-DUP-L",
     "cpt": 21,
@@ -78,7 +78,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AF-11FXDUPL.jpg"
   },
   {
-    "id": "c5fc9daa-b8c0-42f6-baec-9706e23cbef6",
+    "id": "b38fa439-3acb-4326-a0a8-61e76df9f0e9",
     "sku": "AF-11G35",
     "description": "Ubiquiti AirFiber Dish 11Ghz 35dBi 81cm | AF-11G35",
     "cpt": 15,
@@ -91,7 +91,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AF-11G35.jpg"
   },
   {
-    "id": "911848b1-b326-4779-867f-cbf67647139b",
+    "id": "f1fe6cf1-7bc1-474a-a7ba-00459106ed8c",
     "sku": "AF-5XHD",
     "description": "Ubiquiti AirFiber5X HD PtP Radio Gigabit WiFi | AF-5XHD",
     "cpt": 64,
@@ -104,7 +104,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AF-5XHD.jpg"
   },
   {
-    "id": "32cca27d-12ef-445b-9bd1-fb182ef9892c",
+    "id": "41346fc3-402c-42b6-84f9-7835b9656cbe",
     "sku": "AFI-INSK",
     "description": "Ubiquiti AmpliFi Instant Router +1 MeshPoint Kit | AFI-INS",
     "cpt": 37,
@@ -117,7 +117,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AFI-INSK.jpg"
   },
   {
-    "id": "6d8e2c91-75d9-44b0-935e-81614683e7fc",
+    "id": "4c3cfcf7-a249-4e1d-b5f5-07a2f02f349a",
     "sku": "AFI-INSR",
     "description": "Ubiquiti AmpliFi Instant Router | AFI-INS-R",
     "cpt": 23,
@@ -130,7 +130,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AFI-INSR.jpg"
   },
   {
-    "id": "559cfe52-1a17-48eb-b72b-bb138b074773",
+    "id": "b2cd604d-60e7-4f81-a7d2-bee3f340b364",
     "sku": "AIR-D523X",
     "description": "Ubiquiti 5GHz AirFiber Dish 23dBi Slant 45 PtP | AF-5G23-S45",
     "cpt": 16,
@@ -143,7 +143,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AIR-D523X.jpg"
   },
   {
-    "id": "18397f45-8b8f-4f05-a4cc-f260db9e0b4e",
+    "id": "ad1f28c0-b99d-4230-8127-c90a6328c47d",
     "sku": "AIR-D530",
     "description": "Ubiquiti 5GHz AirMax Dish 30dBi Backhaul PtP | RD-5G30",
     "cpt": 17,
@@ -156,7 +156,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AIR-D530.jpg"
   },
   {
-    "id": "bdead421-1cbb-4d08-98c7-8e30c2445ae1",
+    "id": "7752704c-d5ab-40ad-b1b1-c819f1bf2b32",
     "sku": "AIR-D530LW",
     "description": "Ubiquiti 5GHz AirMax Dish 30dBi Light Weight PtP | RD-5G30-LW",
     "cpt": 62,
@@ -169,7 +169,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AIR-D530LW.jpg"
   },
   {
-    "id": "a76d5b3b-0644-444c-805c-e3f66c6b738d",
+    "id": "92fdfec0-f85d-4d7d-8bde-876b08796693",
     "sku": "SKU",
     "description": "Description",
     "cpt": null,
@@ -182,7 +182,7 @@
     "imageURL": "Image URL"
   },
   {
-    "id": "ca88cdc6-7d31-4e63-a4b9-62fc5eed5f29",
+    "id": "fba1df30-27ef-4835-88ab-7607171ab30e",
     "sku": "4G180",
     "description": "Tenda 4G LTE 150Mbps Mobile WiFi Router | 4G180",
     "cpt": 34,
@@ -195,7 +195,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/4G180.jpg"
   },
   {
-    "id": "0db58410-b9c7-4dba-b385-23b6bf6f068f",
+    "id": "3acbd492-2acb-4136-99c5-70f7f472b527",
     "sku": "4G680",
     "description": "Tenda 4G LTE 300Mbps WiFi Router | 4G680",
     "cpt": 0,
@@ -208,7 +208,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/4G680.jpg"
   },
   {
-    "id": "77402d9e-209e-49fa-91ed-059b20116fc1",
+    "id": "c4ffdd39-ab2f-4b79-b727-f8515b212551",
     "sku": "ACB-AC",
     "description": "Ubiquiti AirCube AC WiFi Router | ACB-AC",
     "cpt": 20,
@@ -221,7 +221,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/ACB-AC.jpg"
   },
   {
-    "id": "a4ede8a9-78d3-40cb-ade7-5009478f411a",
+    "id": "c00f354e-037b-47c0-ba3c-23b9df6534cd",
     "sku": "ACB-ISP",
     "description": "Ubiquiti AirCube WiFi PoE Access Point with UNMS | ACB-ISP",
     "cpt": 159,
@@ -234,7 +234,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/ACB-ISP.jpg"
   },
   {
-    "id": "480f9f27-1cff-4432-b259-ab2bc1a3c12e",
+    "id": "8fc6fff3-3150-4db1-81d8-81d3b615e874",
     "sku": "AF-11FX",
     "description": "Ubiquiti AirFiberX 11GHz PtP Radio | AF-11FX",
     "cpt": 10,
@@ -247,7 +247,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AF-11FX.jpg"
   },
   {
-    "id": "22135078-0bd5-49f0-801b-094e9653c6dc",
+    "id": "8ab41350-dcd0-44b9-a6ee-62856087d8d8",
     "sku": "AF-11FXDUPL",
     "description": "Ubiquiti AirFiberX 11Ghz Low Band Duplexer | AF-11FX-DUP-L",
     "cpt": 21,
@@ -260,7 +260,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AF-11FXDUPL.jpg"
   },
   {
-    "id": "16dc751f-7e73-45e1-acf0-ce7b323730fb",
+    "id": "7a5cecb7-20e8-40ba-bc0f-4f381ec88ea8",
     "sku": "AF-11G35",
     "description": "Ubiquiti AirFiber Dish 11Ghz 35dBi 81cm | AF-11G35",
     "cpt": 15,
@@ -273,7 +273,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AF-11G35.jpg"
   },
   {
-    "id": "460eec68-4948-45a7-8477-40c6fe52ec42",
+    "id": "1c699822-70c7-46c9-8786-c7eba80e3d2d",
     "sku": "AF-5XHD",
     "description": "Ubiquiti AirFiber5X HD PtP Radio Gigabit WiFi | AF-5XHD",
     "cpt": 64,
@@ -286,7 +286,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AF-5XHD.jpg"
   },
   {
-    "id": "368c7ccf-0304-427e-8249-82831820730a",
+    "id": "de804a87-4cb9-4174-9b83-653116ca6640",
     "sku": "AFI-INSK",
     "description": "Ubiquiti AmpliFi Instant Router +1 MeshPoint Kit | AFI-INS",
     "cpt": 37,
@@ -299,7 +299,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AFI-INSK.jpg"
   },
   {
-    "id": "9e268bbe-6fe7-4c52-b1eb-c43a2cf7771f",
+    "id": "34c32b3c-771f-4749-9c6b-d0bba2c0ca59",
     "sku": "AFI-INSR",
     "description": "Ubiquiti AmpliFi Instant Router | AFI-INS-R",
     "cpt": 23,
@@ -312,7 +312,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AFI-INSR.jpg"
   },
   {
-    "id": "8a3f4bc7-5176-400c-a921-e2fadfce5909",
+    "id": "bc491def-29b8-476a-b2a4-348c2d4ed5ae",
     "sku": "AIR-D523X",
     "description": "Ubiquiti 5GHz AirFiber Dish 23dBi Slant 45 PtP | AF-5G23-S45",
     "cpt": 16,
@@ -325,7 +325,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AIR-D523X.jpg"
   },
   {
-    "id": "7cb44dec-5d20-4383-a3fe-7a9d6dda6082",
+    "id": "c176ed30-26fb-4028-8934-c018e08ce1b6",
     "sku": "AIR-D530",
     "description": "Ubiquiti 5GHz AirMax Dish 30dBi Backhaul PtP | RD-5G30",
     "cpt": 17,
@@ -338,7 +338,7 @@
     "imageURL": "https://scoop.co.za/download/marketing/images/AIR-D530.jpg"
   },
   {
-    "id": "78709ba2-cdcd-459b-8600-44d8c3b93fce",
+    "id": "42a6f8c7-b2fd-4932-8e5a-1eb26af96d44",
     "sku": "AIR-D530LW",
     "description": "Ubiquiti 5GHz AirMax Dish 30dBi Light Weight PtP | RD-5G30-LW",
     "cpt": 62,
