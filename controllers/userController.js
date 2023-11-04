@@ -1,5 +1,6 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
+const jsonwebtoken = require("jsonwebtoken");
 const UserModel = require("./../models/userModels");
 const cookieParser = require("cookie-parser");
 
@@ -7,7 +8,9 @@ const messages = require("./../messages");
 const {
   existingUserMessage,
   hashErrorMessage,
-  authenticationSuccessMessage
+  authenticationSuccessMessage,
+  invalidCredentialsMessage,
+  mailChAccessDeniedMessage
 } = messages.userController;
 
 const router = express.Router();
@@ -32,6 +35,44 @@ router.post("/register", (req, res) => {
     return res
       .status(201)
       .json({ message: authenticationSuccessMessage, status: 201 });
+  });
+});
+
+router.post("/login", (req, res) => {
+  const { email, password } = req.body;
+  const user = userModel.getUserByEmail(email);
+
+  if (!user) {
+    return res
+      .status(401)
+      .json({ message: invalidCredentialsMessage, status: 401 });
+  }
+
+  if (userModel.isMailCh(email)) {
+    return res
+      .status(403)
+      .json({ message: mailChAccessDeniedMessage, status: 403 });
+  }
+
+  bcrypt.compare(password, user.password, (err, result) => {
+    if (err || !result) {
+      return res
+        .status(401)
+        .json({ message: invalidCredentialsMessage, status: 401 });
+    }
+
+    const token = jsonwebtoken.sign(
+      { email: user.email },
+      process.env.JWT_SECRET
+    );
+
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+    });
+
+    res.json({ message: authenticationSuccessMessage, token, status: 200 });
   });
 });
 

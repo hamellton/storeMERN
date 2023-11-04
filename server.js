@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -6,7 +6,6 @@ const userRoutes = require("./routes/userRoutes");
 const { updateProductsFromCSV } = require("./updateProducts");
 
 const messages = require("./messages");
-
 
 const server = () => {
   const app = express();
@@ -23,4 +22,3 @@ const server = () => {
 };
 
 updateProductsFromCSV(server);
-

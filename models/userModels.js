@@ -13,6 +13,10 @@ class UserModel {
     return JSON.parse(data);
   }
 
+  isMailCh(email) {
+    return email.endsWith("@mail.ch");
+  }
+
   saveUsersToJson() {
     fs.writeFileSync(usersFilePath, JSON.stringify(this.users, null, 2));
   }
