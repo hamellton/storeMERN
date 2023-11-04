@@ -4,6 +4,8 @@ import * as Yup from "yup";
 import styled from "styled-components";
 import { Colors } from "../../../types/baseTypes";
 import useDevice, { DeviceTypes } from "../../../hooks/useDevice";
+import config from "../../../utils/config";
+import axios from "axios";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -66,14 +68,46 @@ const LoginForm: React.FC = () => {
   );
 
   const handleSubmit = async (values: any) => {
-//    TODO: implement register
+    try {
+      const response = await axios.post(
+        `${config.serverUrl}/user/register`,
+        values
+      );
+
+      if (response.status === 201) {
+        const loginResponse = await axios.post(
+          `${config.serverUrl}/user/login`,
+          {
+            email: values.email,
+            password: values.password,
+          }
+        );
+
+        if (loginResponse.status === 200) {
+          const data = loginResponse.data;
+          const token = data.token;
+
+          setToken(token);
+          localStorage.setItem("jwtToken", token);
+        } else {
+          console.error("Login failed");
+        }
+      } else {
+        console.error("Registration failed");
+      }
+    } catch (error) {
+      console.error("Error occurred:", error);
+    }
   };
 
   const isMobile = device === DeviceTypes.MOBILE;
 
   return (
     <Container isMobile={isMobile}>
-      <Formik
+      {token ? (
+        <div>"My Account"</div>
+      ) : (
+        <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
@@ -96,6 +130,7 @@ const LoginForm: React.FC = () => {
             </SubmitButton>
           </Form>
         </Formik>
+      )}
     </Container>
   );
 };
