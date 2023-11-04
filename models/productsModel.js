@@ -15,6 +15,12 @@ class Product {
     const products = this.loadProductsFromJSON();
     return products;
   }
+
+  getProductById(id) {
+    const products = this.loadProductsFromJSON();
+    const idString = String(id);
+    return products.find((product) => product.id === idString);
+  }
 }
 
 module.exports = Product;
