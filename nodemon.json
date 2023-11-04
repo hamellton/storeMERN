@@ -1,0 +1,3 @@
+{
+  "ignore": ["db/products.json", "db/products.csv"]
+}

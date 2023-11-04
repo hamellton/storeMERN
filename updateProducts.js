@@ -20,7 +20,6 @@ const updateProductsFromCSV = (callback) => {
           "retailPrice": parseFloat(data["Retail Price"]),
           manufacturer: data.Manufacturer,
           "imageURL": data["Image URL"],
-          "category": "test",
         };
 
         results.push(product);
