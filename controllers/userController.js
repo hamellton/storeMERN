@@ -14,7 +14,6 @@ const {
   authenticationSuccessMessage,
   logoutSuccessMessage,
   deleteUserNotFoundMessage,
-  deleteOwnAccountMessage,
   deleteSuccessMessage,
   deleteUserErrorMessage,
 } = messages.userController;
@@ -107,6 +106,5 @@ router.delete("/delete", authenticateUser, (req, res) => {
       .json({ message: deleteUserErrorMessage, status: 500 });
   }
 });
-
 
 module.exports = router;
