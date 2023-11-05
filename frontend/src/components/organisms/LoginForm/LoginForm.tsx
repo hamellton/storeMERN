@@ -78,22 +78,17 @@ const LoginForm: React.FC = () => {
         email: values.email,
         password: values.password,
       };
-  
+
       const response = await sendRequest<ILoginResponse | IApiResponseError>(
         `${config.serverUrl}/user/login`,
         "POST",
         data
       );
-  
+
       if (response.status === 200) {
-        if ('token' in response.data) {
-          const token = (response.data as ILoginResponse).token;
-          localStorage.setItem("jwtToken", token);
-          window.location.href = "/login";
-        } else {
-          const error = response.data as IApiResponseError;
-          setLoginError(error.message);
-        }
+        const token = (response.data as ILoginResponse).token;
+        localStorage.setItem("jwtToken", token);
+        window.location.href = "/products";
       } else {
         const error = response.data as IApiResponseError;
         setLoginError(error.message);
@@ -102,7 +97,7 @@ const LoginForm: React.FC = () => {
       const apiError = error as IApiResponseError;
       setLoginError(apiError.message);
     }
-  };  
+  };
 
   const isMobile = device === DeviceTypes.MOBILE;
 

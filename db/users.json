@@ -73,5 +73,40 @@
     "id": "1735eeeb-6a94-4421-adf7-bc67da9860cb",
     "email": "test54@gmail.com",
     "password": "$2b$10$hSKepyfdEU4Mf2gYSI3BAeer9nuX/v9a0NHgxxf.t2xU0bSr6C6l6"
+  },
+  {
+    "id": "0b5d7253-7791-44ee-bdd5-93cec5aa5a64",
+    "email": "test@mail.ch",
+    "password": "$2b$10$xGvMNHMV0G5sw7zQ0/Lfme.HpTkkObJX20bfWz3mDcABCIVgIdD1W"
+  },
+  {
+    "id": "16cf8014-9dbe-4018-84ec-ea20b3d6b7c6",
+    "email": "test2@gmail.ch",
+    "password": "$2b$10$RHOAgLaldJZdtNMOWJsGUuf53KfTA/COR58b3KBfMFgP6vHpg1nzK"
+  },
+  {
+    "id": "8bbe1a67-a474-4f02-9603-bcbbc28f9bd0",
+    "email": "test3@gmail.ch",
+    "password": "$2b$10$L.gZxKk7QcnpBfiiUq068u0Hmfe4lbHz4IkX9WB8BaoitKvkPrW.u"
+  },
+  {
+    "id": "ef1da376-eebc-4939-8010-0f736c008afb",
+    "email": "test5@gmail.ch",
+    "password": "$2b$10$AtEBFEvpuhzrcDj40ytiFe1y6nkO2JqncPqZicDb2Lff/cBNtqtAC"
+  },
+  {
+    "id": "0fd49d1a-93c2-4f45-9797-fee21d31f4d5",
+    "email": "test6@gmail.ch",
+    "password": "$2b$10$VbnstI10NZ5ZQ1TsnnC0zuopYcdYyQbECk08.eNvWbbJshuclcVAu"
+  },
+  {
+    "id": "2113fa23-b058-4d09-8802-03cf13ea58cb",
+    "email": "test3@mail.ch",
+    "password": "$2b$10$wz3cs2ChGhOdecobK7hWjujP3pMv/rK2F.glBpLVpWJcZo2zPFntO"
+  },
+  {
+    "id": "633eeba2-fa98-4c35-ac99-bc1d7d513388",
+    "email": "test100@mail.ch",
+    "password": "$2b$10$7LbS4d8glW5r3ZjB7vefxOXPF7m4SZcRv79Y3MJ7weUCF0ZVWtWU."
   }
 ]

@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { Colors } from "../../../types/baseTypes";
 import useDevice, { DeviceTypes } from "../../../hooks/useDevice";
 import useAuth from "../../../hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const HeaderContainer = styled.header<{ device?: DeviceTypes }>`
   background-color: ${Colors.primaryBackground};
@@ -10,14 +11,14 @@ const HeaderContainer = styled.header<{ device?: DeviceTypes }>`
   padding: 16px 100px;
   display: flex;
   align-items: center;
-  position: absolute;
-  width: 100%;
-  gap: 100px;
+  justify-content: space-between;
+  gap: 50px;
+
   ${(props) =>
     props.device === DeviceTypes.MOBILE &&
     css`
-      text-align: center;
       padding: 10px 30px;
+      text-align: center;
     `}
 `;
 
@@ -25,6 +26,7 @@ const Logo = styled.div<{ device?: DeviceTypes }>`
   color: ${Colors.white};
   font-size: 24px;
   font-weight: bold;
+
   ${(props) =>
     props.device === DeviceTypes.MOBILE &&
     css`
@@ -34,31 +36,39 @@ const Logo = styled.div<{ device?: DeviceTypes }>`
 
 const MenuLoginContainer = styled.div<{ device?: DeviceTypes }>`
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
-
-  ${(props) =>
-    props.device === DeviceTypes.MOBILE &&
-    css`
-      font-size: 16px;
-    `}
+  a {
+    text-decoration: none;
+    color: ${Colors.white};
+  }
 `;
 
 const Menu = styled.div<{ device?: DeviceTypes }>`
   font-size: 18px;
+
+  a {
+    text-decoration: none;
+    color: ${Colors.black};
+  }
 
   ${(props) =>
     props.device === DeviceTypes.MOBILE &&
     css`
       font-size: 16px;
       text-align: left;
+      a {
+        text-decoration: none;
+        color: ${Colors.black};
+      }
     `}
 `;
 
 const Login = styled.div<{ device?: DeviceTypes }>`
   font-size: 18px;
   margin-left: 20px;
+
   ${(props) =>
     props.device === DeviceTypes.MOBILE &&
     css`
@@ -71,6 +81,8 @@ const Login = styled.div<{ device?: DeviceTypes }>`
 const Logout = styled.div<{ device?: DeviceTypes }>`
   font-size: 18px;
   margin-left: 20px;
+  cursor: pointer;
+
   ${(props) =>
     props.device === DeviceTypes.MOBILE &&
     css`
@@ -89,7 +101,9 @@ const Header: React.FC = () => {
       <Logo device={device}>Logo</Logo>
       <MenuLoginContainer device={device}>
         {isAuthenticated ? (
-          <Menu device={device}>Products</Menu>
+          <Link to="/products">
+            <Menu device={device}>Products</Menu>
+          </Link>
         ) : (
           <Login device={device}>Login</Login>
         )}

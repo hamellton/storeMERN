@@ -10,15 +10,6 @@ import { IApiResponseError } from "../../../types/types";
 import { sendRequest } from "../../../utils/api";
 import { ILoginResponse } from "../LoginForm/LoginForm.types";
 
-const validationSchema = Yup.object().shape({
-  email: Yup.string()
-    .email("Invalid email format")
-    .required("Email is required"),
-  password: Yup.string().required("Password is required"),
-});
-
-const initialValues = { email: "", password: "" };
-
 const Container = styled.div<{ isMobile: boolean }>`
   display: flex;
   flex-direction: column;
@@ -69,6 +60,15 @@ const ErrorContainer = styled.div`
   margin-top: 10px;
 `;
 
+const validationSchema = Yup.object().shape({
+  email: Yup.string()
+    .email("Invalid email format")
+    .required("Email is required"),
+  password: Yup.string().required("Password is required"),
+});
+
+const initialValues = { email: "", password: "" };
+
 const RegisterForm: React.FC = () => {
   const { device } = useDevice() ?? {};
   const [registrationError, setRegistrationError] = useState<string | null>(
@@ -87,24 +87,7 @@ const RegisterForm: React.FC = () => {
       >(`${config.serverUrl}/user/register`, "POST", data);
 
       if (registerResponse.status === 201) {
-        const loginData = {
-          email: values.email,
-          password: values.password,
-        };
-
-        const loginResponse = await sendRequest<
-          ILoginResponse | IApiResponseError
-        >(`${config.serverUrl}/user/login`, "POST", loginData);
-
-        if (loginResponse.status === 200) {
-          const token = (loginResponse.data as ILoginResponse).token;
-          localStorage.setItem("jwtToken", token);
-          window.location.href = "/login";
-        } else {
-          const errorMessage = (loginResponse.data as IApiResponseError)
-            .message;
-          setRegistrationError(errorMessage);
-        }
+        window.location.href = "/login";
       } else {
         console.error("Registration failed");
         const errorMessage = (registerResponse.data as IApiResponseError)

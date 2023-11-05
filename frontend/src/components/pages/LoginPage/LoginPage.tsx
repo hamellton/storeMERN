@@ -9,13 +9,14 @@ const PageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 85vh;
   background-color: ${Colors.white};
 `;
 
 const Content = styled.div`
   width: 100%;
   background-color: ${Colors.white};
+  overflow-y: auto;
 `;
 
 const Tabs = styled.div`
