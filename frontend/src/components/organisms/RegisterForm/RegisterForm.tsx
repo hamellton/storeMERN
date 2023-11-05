@@ -111,13 +111,13 @@ const RegisterForm: React.FC = () => {
         <Form>
           <InputContainer isMobile={isMobile}>
             <Label htmlFor="email">Email</Label>
-            <Input type="text" name="email" isMobile={isMobile} />
+            <Input id="email" type="text" name="email" isMobile={isMobile} />
             <ErrorText name="email" component="div" />
           </InputContainer>
 
           <InputContainer isMobile={isMobile}>
             <Label htmlFor="password">Password</Label>
-            <Input type="password" name="password" isMobile={isMobile} />
+            <Input type="password" id="password" name="password" isMobile={isMobile} />
             <ErrorText name="password" component="div" />
           </InputContainer>
 

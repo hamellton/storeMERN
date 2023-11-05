@@ -1,25 +1,53 @@
 import { render, screen } from "@testing-library/react";
+import useAuth from "../../hooks/useAuth";
+import { MemoryRouter } from "react-router-dom";
 import Header from "../organisms/Header/Header";
 
-test("Header renders without errors", () => {
-  render(<Header />);
-  expect(screen.getByText("Logo")).toBeInTheDocument();
-});
+jest.mock("../../hooks/useAuth");
 
-test("Header displays the logo", () => {
-  render(<Header />);
-  const logo = screen.getByText("Logo");
-  expect(logo).toBeInTheDocument();
-});
+describe("Header component", () => {
+  it("displays 'Login' when not authenticated", () => {
+    (useAuth as jest.Mock).mockReturnValue({
+      isAuthenticated: false,
+    });
 
-test("Header displays 'Products' in desktop mode", () => {
-  render(<Header />);
-  const products = screen.getByText("Products");
-  expect(products).toBeInTheDocument();
-});
+    render(
+      <MemoryRouter>
+        <Header />
+      </MemoryRouter>
+    );
 
-test("Header displays 'Login' in desktop mode", () => {
-  render(<Header />);
-  const login = screen.getByText("Login");
-  expect(login).toBeInTheDocument();
+    const loginElement = screen.getByText("Login");
+    expect(loginElement).toBeInTheDocument();
+  });
+
+  it("displays 'Products' when authenticated", () => {
+    (useAuth as jest.Mock).mockReturnValue({
+      isAuthenticated: true,
+    });
+
+    render(
+      <MemoryRouter>
+        <Header />
+      </MemoryRouter>
+    );
+
+    const productsElement = screen.getByText("Products");
+    expect(productsElement).toBeInTheDocument();
+  });
+
+  it("displays 'Logout' when authenticated", () => {
+    (useAuth as jest.Mock).mockReturnValue({
+      isAuthenticated: true,
+    });
+
+    render(
+      <MemoryRouter>
+        <Header />
+      </MemoryRouter>
+    );
+
+    const logoutElement = screen.getByText("Logout");
+    expect(logoutElement).toBeInTheDocument();
+  });
 });

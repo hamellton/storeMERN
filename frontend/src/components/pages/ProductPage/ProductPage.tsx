@@ -36,7 +36,7 @@ const Content = styled.div`
 const ProductPageContainer = styled.div<{ device?: DeviceTypes }>`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: ${(props) => (props.device === DeviceTypes.MOBILE ? "center" : "flex-start")};
   height: 100%;
   width: ${(props) => (props.device === DeviceTypes.MOBILE ? "100%" : "auto")};
   flex-direction: ${(props) =>

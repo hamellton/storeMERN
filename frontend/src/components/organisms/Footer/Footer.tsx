@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
 
   return (
     <div>
-      <FooterContainer device={device}>
+      <FooterContainer data-testid="footer-container" device={device}>
       </FooterContainer>
     </div>
   );

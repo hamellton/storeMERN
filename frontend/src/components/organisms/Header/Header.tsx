@@ -102,13 +102,13 @@ const Header: React.FC = () => {
       <MenuLoginContainer device={device}>
         {isAuthenticated ? (
           <Link to="/products">
-            <Menu device={device}>Products</Menu>
+            <Menu aria-label="Products" device={device}>Products</Menu>
           </Link>
         ) : (
           <Login device={device}>Login</Login>
         )}
         {isAuthenticated && (
-          <Logout device={device} onClick={logout}>
+          <Logout data-testid="logout-button" device={device} onClick={logout}>
             Logout
           </Logout>
         )}
