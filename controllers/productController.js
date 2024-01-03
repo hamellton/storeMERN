@@ -1,38 +1,46 @@
 const express = require("express");
-const Product = require("./../models/productsModel");
-
-const messages = require("./../messages");
-const { productNotFoundMessage } = messages.productController;
+const Product = require("../models/productModel");
 
 const router = express.Router();
 const productModel = new Product();
 
-router.get("/", (req, res) => {
-  const page = parseInt(req.query.page) || 1;
-  const perPage = parseInt(req.query.perPage) || 10;
+router.get("/", async (req, res) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const perPage = parseInt(req.query.perPage) || 10;
 
-  const startIndex = (page - 1) * perPage;
-  const endIndex = page * perPage;
+    const startIndex = (page - 1) * perPage;
+    const endIndex = page * perPage;
 
-  const products = productModel.getAllProducts();
-  const paginatedProducts = products.slice(startIndex, endIndex);
+    const products = await productModel.getAllProducts();
+    const paginatedProducts = products.slice(startIndex, endIndex);
 
-  res.json({
-    products: paginatedProducts,
-    page,
-    perPage,
-    totalProducts: products.length,
-    status: 200,
-  });
+    res.json({
+      products: paginatedProducts,
+      page,
+      perPage,
+      totalProducts: products.length,
+      status: 200,
+    });
+  } catch (error) {
+    console.error("Error fetching all products:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 });
 
-router.get("/product/:id", (req, res) => {
-  const { id } = req.params;
-  const product = productModel.getProductById(id);
-  if (product) {
-    res.json({ product, status: 200 });
-  } else {
-    res.status(404).json({ message: productNotFoundMessage, status: 404 });
+router.get("/product/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const product = await productModel.getProductById(id);
+
+    if (product) {
+      res.json({ product, status: 200 });
+    } else {
+      res.status(404).json({ message: "Product not found", status: 404 });
+    }
+  } catch (error) {
+    console.error("Ошибка при получении продукта по id:", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 

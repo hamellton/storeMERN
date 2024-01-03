@@ -95,8 +95,8 @@ const ProductCard: React.FC<IProductCardProps> = ({ product }) => {
           <Subtitle device={device}>Router</Subtitle>
           <Title>{product.sku}</Title>
         </TitleContainer>
-        {product.retailPrice !== null && (
-          <Price>{product.retailPrice.toFixed(2)} грн</Price>
+        {product?.retailPrice && (
+          <Price>{Number(product?.retailPrice).toFixed(2)} грн</Price>
         )}
       </CardContent>
     </CardContainer>

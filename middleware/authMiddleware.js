@@ -1,16 +1,10 @@
 const jsonwebtoken = require("jsonwebtoken");
 
-const messages = require("./../messages");
-const {
-    unauthorizedMessage,
-    authenticationErrorMessage,
-  } = messages;
-
 const authenticateUser = (req, res, next) => {
   const token = req.headers.authorization;
 
   if (!token) {
-    return res.status(401).json({ message: unauthorizedMessage });
+    return res.status(401).json({ message: "Unauthorized" });
   }
 
   try {
@@ -18,7 +12,7 @@ const authenticateUser = (req, res, next) => {
     req.user = user;
     next();
   } catch (error) {
-    return res.status(401).json({ message: authenticationErrorMessage });
+    return res.status(401).json({ message: "Authentication error" });
   }
 };
 

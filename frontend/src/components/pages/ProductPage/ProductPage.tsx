@@ -175,9 +175,9 @@ const ProductPage: React.FC = () => {
                   <Subtitle device={device}>Router</Subtitle>
                   <SkuTitle>{product.sku}</SkuTitle>
                   <p>Total Stock: {product.totalStock}</p>
-                  {product.retailPrice !== null && (
+                  {product?.retailPrice && (
                     <Price>
-                      Retail Price: ${product.retailPrice.toFixed(2)}
+                      Retail Price: ${Number(product.retailPrice).toFixed(2)}
                     </Price>
                   )}
                   <p>{product.description}</p>

@@ -4,10 +4,6 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
-const { updateProductsFromCSV } = require("./updateProducts");
-
-const messages = require("./messages");
-
 const server = () => {
   const app = express();
 
@@ -19,8 +15,8 @@ const server = () => {
 
   const port = process.env.PORT || 4000;
   app.listen(port, () => {
-    console.log(`${messages.serverRunningMessage} ${port}`);
+    console.log(`Server is running on port ${port}`);
   });
 };
 
-updateProductsFromCSV(server);
+server();

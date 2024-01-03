@@ -51,9 +51,10 @@ const ProductsPage: React.FC = () => {
   const { device } = useDevice() ?? {};
   const { isAuthenticated } = useAuth();
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const [products, setProducts] = useState<IProduct[]>([]);
-  const [totalPages, setTotalPages] = useState(0);
+  console.log("🚀 ~ file: ProductsPage.tsx:56 ~ products:", products)
+  const [totalPages, setTotalPages] = useState<number>(0);
 
   useEffect(() => {
     if (!isAuthenticated) window.location.href = '/login'
@@ -96,9 +97,11 @@ const ProductsPage: React.FC = () => {
       <PageContainer>
         <Content>
           <ProductsPageContainer device={device}>
-            {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+            {products && products.length > 0 && products.map((product) => {
+              return (
+                <ProductCard key={product.id} product={product} />
+              )
+            })}
           </ProductsPageContainer>
           <Pagination
             currentPage={currentPage}
