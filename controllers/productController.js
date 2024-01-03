@@ -9,18 +9,23 @@ router.get("/", async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
     const perPage = parseInt(req.query.perPage) || 10;
+    const sortBy = req.query.sortBy || 'id';
+    const sortOrder = req.query.sortOrder || 'asc';
 
     const startIndex = (page - 1) * perPage;
-    const endIndex = page * perPage;
 
-    const products = await productModel.getAllProducts();
-    const paginatedProducts = products.slice(startIndex, endIndex);
+    const filter = {
+      priceFrom: parseFloat(req.query.priceFrom) || null,
+      priceTo: parseFloat(req.query.priceTo) || null,
+    };
+
+    const { products, totalProducts } = await productModel.getFilteredProducts(filter, sortBy, sortOrder, startIndex, perPage);
 
     res.json({
-      products: paginatedProducts,
+      products,
       page,
       perPage,
-      totalProducts: products.length,
+      totalProducts,
       status: 200,
     });
   } catch (error) {
@@ -28,6 +33,7 @@ router.get("/", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
 
 router.get("/product/:id", async (req, res) => {
   try {
