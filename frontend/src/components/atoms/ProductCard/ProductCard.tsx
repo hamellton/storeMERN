@@ -11,17 +11,18 @@ const CardContainer = styled.div`
   background-color: ${Colors.white};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
-  padding: 20px;
+  padding: 10px; /* Уменьшил padding */
   display: flex;
   flex-direction: column;
+  max-width: 300px; /* Уменьшил максимальную ширину */
+  margin: 10px; /* Добавил отступ между карточками */
 
   &:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-
-  max-width: 500px;
 `;
+
 
 const CardContent = styled.div<{ device?: DeviceTypes }>`
   display: flex;
@@ -64,8 +65,9 @@ const Price = styled.p`
 `;
 
 const ProductImage = styled.img`
-  max-width: 100%;
-  max-height: 300px;
+  width: 100%; /* Чтобы ширина была 100% от родительского контейнера */
+  height: 200px; /* Задайте фиксированную высоту */
+  object-fit: cover; /* Позволяет изображению сохранять пропорции при обрезке */
   border-radius: 4px;
 `;
 
