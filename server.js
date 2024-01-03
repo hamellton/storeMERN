@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
+const errorHandler = require("./middleware/errorHandler");
 const server = () => {
   const app = express();
 
@@ -12,6 +13,8 @@ const server = () => {
 
   app.use("/api", userRoutes);
   app.use("/api", productRoutes);
+
+  app.use(errorHandler);
 
   const port = process.env.PORT || 4000;
   app.listen(port, () => {

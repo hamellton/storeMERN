@@ -39,7 +39,7 @@ router.get("/product/:id", async (req, res) => {
       res.status(404).json({ message: "Product not found", status: 404 });
     }
   } catch (error) {
-    console.error("Ошибка при получении продукта по id:", error);
+    console.error("Error when receiving product by id:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
