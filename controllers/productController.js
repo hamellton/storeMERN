@@ -1,8 +1,9 @@
 const express = require("express");
+const db = require("../db/db");
 const Product = require("../models/productModel");
 
 const router = express.Router();
-const productModel = new Product();
+const productModel = new Product(db);
 
 router.get("/", async (req, res) => {
   try {

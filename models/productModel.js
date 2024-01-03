@@ -1,35 +1,36 @@
-const db = require("./../db/db");
+require("dotenv").config();
 
 class Product {
+  constructor(db) {
+    this.db = db;
+  }
+
   getAllProducts() {
-    return new Promise((resolve, reject) => {
-      // Выполните SQL-запрос к базе данных для получения всех продуктов
-      const sql = "SELECT * FROM products";
-      db.query(sql, (err, results) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(results);
-        }
-      });
+    return new Promise(async (resolve, reject) => {
+      try {
+        const sql = "SELECT * FROM products";
+        const [results] = await this.db.query(sql);
+        resolve(results);
+      } catch (error) {
+        reject(error);
+      }
     });
   }
 
   getProductById(id) {
-    return new Promise((resolve, reject) => {
-      // Выполните SQL-запрос к базе данных для получения продукта по id
-      const sql = "SELECT * FROM products WHERE id = ?";
-      db.query(sql, [id], (err, results) => {
-        if (err) {
-          reject(err);
+    return new Promise(async (resolve, reject) => {
+      try {
+        const sql = "SELECT * FROM products WHERE id = ?";
+        const [results] = await this.db.query(sql, [id]);
+
+        if (results.length > 0) {
+          resolve(results[0]);
         } else {
-          if (results.length > 0) {
-            resolve(results[0]);
-          } else {
-            resolve(null); // Возвращаем null, если продукт не найден
-          }
+          resolve(null);
         }
-      });
+      } catch (error) {
+        reject(error);
+      }
     });
   }
 }
